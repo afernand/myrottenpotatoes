@@ -13,6 +13,8 @@ Rottenpotatoes::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :movies
+#match 'movies/index/:sort_by_title' => 'MoviesController#index'
+#match 'movies/index/:sort_by_release_date' => 'MoviesController#index'
 
   # Sample resource route with options:
   #   resources :products do
