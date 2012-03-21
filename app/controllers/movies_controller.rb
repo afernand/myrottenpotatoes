@@ -8,11 +8,15 @@ class MoviesController < ApplicationController
 
   def index
     # if params['sort_by_title'] exists, then sort by title
+    @title_class = {:class=>'normal'};
+    @release_date_class = {:class=>'normal'};
     if params[:sort_by_title]
       @movies = Movie.order('title')
+      @title_class = {:class=>'hilite'};
     else 
       if params[:sort_by_release_date]
         @movies = Movie.order('release_date')
+        @release_date_class = {:class=>'hilite'};
       else
         @movies = Movie.all
       end
